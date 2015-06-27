@@ -1,0 +1,53 @@
+Class weapon
+{
+private: 
+  int attack;
+  int durability;
+public:
+  weapon(int att, int dur) :attack(att), durability(dur) {}
+  
+  virtual int returnatack(){ return attack;}
+}
+
+class axe : public weapon
+{
+private:
+  int attack;
+  int durability;
+  int bonusdamage;
+public:
+  axe(int att, int dur, int bonus) : weapon(att, dur), bonusdamage(bouns) {}
+  
+  int returnatack(){ return attack;}
+  int returndamage(){ return (attack+bounusdamage);}
+  
+  void ouputdamage()
+  {
+  cout << "damage is:" << (attack+bounusdamage) << endl;
+  }
+  
+}
+
+class spear : public weapon
+{
+private:
+  int attack;
+  int durability;
+  int thrust；
+  
+public:
+  spear(int att, int dur, int thrust): weapon(att, dur), thrust(thrust) {}
+  
+  int returnattack(){ return attack;}
+  int returnthrust(){ return thrust;}
+  
+  int counterattack ( int thrust, int attack);
+  
+}
+
+int spear :: counterattack (int thrust, int attack)
+{
+  int counterattack;
+  counterattack = attack * thrust;
+  return counterattack;
+}
